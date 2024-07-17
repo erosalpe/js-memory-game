@@ -6,6 +6,7 @@ let randomNumber;
 let errors = 0;
 let first = 0;
 let second = 0;
+let score = 0;
 
 //creates an array with numbers 1 to 12
 for(let i = 0; i < 12; i++){
@@ -100,6 +101,12 @@ function cardCheck(event){
             console.log('sono uguali');
             first = 0;
             second = 0;
+            if(score < 5){
+                score ++;
+            } else {
+                grid.innerHTML = 'Hai vinto!'
+                grid.classList.add('win');
+            }
             overlay.style.display = 'none';
         } else {
             setTimeout(()=>{
