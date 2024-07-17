@@ -1,5 +1,6 @@
 const grid = document.getElementById("container-cards");
 const error = document.getElementById("errors-counter");
+const overlay = document.getElementById('overlay');
 let gridValue = [];
 let randomNumber;
 let errors = 0;
@@ -89,6 +90,7 @@ function cardCheck(event){
         first = parseInt(event.target.id, 10);
     } else if(first > 0){
         second = parseInt(event.target.id, 10);
+        overlay.style.display = 'block';
     }
 
     console.log(first, second);
@@ -98,6 +100,7 @@ function cardCheck(event){
             console.log('sono uguali');
             first = 0;
             second = 0;
+            overlay.style.display = 'none';
         } else {
             setTimeout(()=>{
                 console.log('sono diversi')
@@ -107,6 +110,7 @@ function cardCheck(event){
                 second = 0;
                 errors ++;
                 error.innerHTML = `Errori : ${errors}`;
+                overlay.style.display = 'none';
             },500);
             
         }
