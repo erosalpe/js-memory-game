@@ -49,27 +49,27 @@ function setImg(id){
     //console.log(tag);
     switch(id){
         case 1:
-        case 2:
+        case 12:
             tag.src = './assets/images/alien.png';
             break;
-        case 3:
-        case 4:
+        case 2:
+        case 11:
             tag.src = './assets/images/bug.png';
             break;
-        case 5:
-        case 6:
+        case 3:
+        case 10:
             tag.src = './assets/images/duck.png';
             break;
-        case 7:
-        case 8:
+        case 4:
+        case 9:
             tag.src = './assets/images/rocket.png';
             break;
-        case 9:
-        case 10:
+        case 5:
+        case 8:
             tag.src = './assets/images/spaceship.png';
             break;
-        case 11:
-        case 12:
+        case 6:
+        case 7:
             tag.src = './assets/images/tiktac.png';
             break;
         default:
@@ -96,7 +96,7 @@ function cardCheck(event){
     console.log(first, second);
 
     if(first != 0 && second != 0){
-        if((first === second -1) || (first === second + 1)){
+        if(first + second === 13){
             console.log('sono uguali');
             first = 0;
             second = 0;
